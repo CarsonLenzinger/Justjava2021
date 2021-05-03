@@ -10,9 +10,13 @@ package com.example.justjava;
 
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
@@ -26,11 +30,13 @@ public class MainActivity extends AppCompatActivity {
      */
     int quantity = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
 
     /**
      * This method is called when the Increment/Plus button is clicked.
@@ -54,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+        Log.v("MainActivity","Has whipped cream: " + hasWhippedCream);
+
         int price = quantity * 5;
         String priceMessage = "Thank you for ordering " + quantity + " Coffees! \nAmount Due: $" + price; //I used the escape key \n to put info on a new line
         priceMessage = priceMessage + "\n\nYour order will be right up!"; //Double \n escape key for w line separation
