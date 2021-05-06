@@ -64,11 +64,38 @@ public class MainActivity extends AppCompatActivity {
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
         Log.v("MainActivity","Has whipped cream: " + hasWhippedCream);
 
+        int price = calculatePrice();
+        int displaymessage = price;
+        displayMessage(createOrderSummary(displaymessage));
+        
+    }
+
+
+    private int calculatePrice(){
         int price = quantity * 5;
+        return price;
+    }
+
+
+
+
+    /**
+     * Create a summary of our order
+     * @param price
+     * @return
+     */
+
+    private String createOrderSummary(int price) {
         String priceMessage = "Thank you for ordering " + quantity + " Coffees! \nAmount Due: $" + price; //I used the escape key \n to put info on a new line
         priceMessage = priceMessage + "\n\nYour order will be right up!"; //Double \n escape key for w line separation
-        displayMessage(priceMessage);
+        return priceMessage;
+
+
+
     }
+
+
+
 
     /**
      * This method displays the given quantity value on the screen.
@@ -92,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
+
     }
 
 }
