@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
         Log.v("MainActivity","Has whipped cream: " + hasWhippedCream);
 
         int price = calculatePrice();
-        int displaymessage = price;
-        displayMessage(createOrderSummary(displaymessage));
+        String priceMessage =  createOrderSummary(price, hasWhippedCream);
+        displayMessage(priceMessage);
         
     }
 
@@ -78,16 +78,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     /**
      * Create a summary of our order
      * @param price
+     * @param addWhippedCream is whether or not the user wants Whipped Cream Topping
      * @return
      */
 
-    private String createOrderSummary(int price) {
+    private String createOrderSummary(int price, boolean addWhippedCream) {
         String priceMessage = "Thank you for ordering " + quantity + " Coffees! \nAmount Due: $" + price; //I used the escape key \n to put info on a new line
-        priceMessage = priceMessage + "\n\nYour order will be right up!"; //Double \n escape key for w line separation
+        priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
+        priceMessage += "\n\nYour order will be right up!"; //Double \n escape key for w line separation
         return priceMessage;
 
 
