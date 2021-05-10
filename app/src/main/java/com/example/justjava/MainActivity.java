@@ -86,12 +86,11 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private String createOrderSummary(int price, boolean addWhippedCream) {
-        String priceMessage = "Thank you for ordering " + quantity + " Coffees! \nAmount Due: $" + price; //I used the escape key \n to put info on a new line
-        priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
+        String priceMessage = "Thank you for ordering " + quantity + " Coffees!";
+        priceMessage += "\nAdd Whipped Cream? " + addWhippedCream; //I used the escape key \n to put info on a new line
+        priceMessage += "\nAmount Due: $" + price; //I used the escape key \n to put info on a new line
         priceMessage += "\n\nYour order will be right up!"; //Double \n escape key for w line separation
         return priceMessage;
-
-
 
     }
 
