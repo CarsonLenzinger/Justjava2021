@@ -60,12 +60,17 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        // Figure out if user wants whipped cream
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
         Log.v("MainActivity","Has whipped cream: " + hasWhippedCream);
 
+        // Figure out if user wants chocolate
+        CheckBox chocolate = (CheckBox) findViewById(R.id.chocolate);
+        boolean hasChocolate = chocolate.isChecked();
+
         int price = calculatePrice();
-        String priceMessage =  createOrderSummary(price, hasWhippedCream);
+        String priceMessage =  createOrderSummary(price, hasWhippedCream, hasChocolate);
         displayMessage(priceMessage);
         
     }
@@ -82,12 +87,14 @@ public class MainActivity extends AppCompatActivity {
      * Create a summary of our order
      * @param price
      * @param addWhippedCream is whether or not the user wants Whipped Cream Topping
+     * @param chocolate
      * @return
      */
 
-    private String createOrderSummary(int price, boolean addWhippedCream) {
+    private String createOrderSummary(int price, boolean addWhippedCream, boolean chocolate) {
         String priceMessage = "Thank you for ordering " + quantity + " Coffees!";
-        priceMessage += "\nAdd Whipped Cream? " + addWhippedCream; //I used the escape key \n to put info on a new line
+        priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
+        priceMessage += "\nAdd Chocolate? " + chocolate;//I used the escape key \n to put info on a new line
         priceMessage += "\nAmount Due: $" + price; //I used the escape key \n to put info on a new line
         priceMessage += "\n\nYour order will be right up!"; //Double \n escape key for w line separation
         return priceMessage;
