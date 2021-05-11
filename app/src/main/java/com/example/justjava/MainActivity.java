@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private String createOrderSummary(int price, boolean addWhippedCream, boolean chocolate) {
-        String priceMessage = "Thank you for ordering " + quantity + " Coffees!";
+        String priceMessage = "Name: Carson Lenzinger";
+        priceMessage += "\nThank you for ordering " + quantity + " Coffees!";
         priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
         priceMessage += "\nAdd Chocolate? " + chocolate;//I used the escape key \n to put info on a new line
         priceMessage += "\nAmount Due: $" + price; //I used the escape key \n to put info on a new line
