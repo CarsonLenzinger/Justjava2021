@@ -19,6 +19,14 @@
             android:text="Toppings"
             android:paddingTop="10dp"/>
 
+        <EditText
+            android:id="@+id/user_input_name_view"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:hint="name" />
+
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
@@ -69,8 +70,12 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolate = (CheckBox) findViewById(R.id.chocolate);
         boolean hasChocolate = chocolate.isChecked();
 
+
+        boolean name = this.<Boolean><Boolean>(R.id.user_input_name_view);
+
+
         int price = calculatePrice();
-        String priceMessage =  createOrderSummary(price, hasWhippedCream, hasChocolate);
+        String priceMessage =  createOrderSummary(price, hasWhippedCream, hasChocolate, name);
         displayMessage(priceMessage);
         
     }
@@ -91,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
      * @return
      */
 
-    private String createOrderSummary(int price, boolean addWhippedCream, boolean chocolate) {
-        String priceMessage = "Name: Carson Lenzinger";
+    private String createOrderSummary(int price, boolean addWhippedCream, boolean chocolate, boolean name) {
+        String priceMessage = "Name: "+ name;
         priceMessage += "\nThank you for ordering " + quantity + " Coffees!";
         priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
         priceMessage += "\nAdd Chocolate? " + chocolate;//I used the escape key \n to put info on a new line
