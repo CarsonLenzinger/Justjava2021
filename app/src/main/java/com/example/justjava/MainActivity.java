@@ -71,7 +71,10 @@ public class MainActivity extends AppCompatActivity {
         boolean hasChocolate = chocolate.isChecked();
 
 
-        boolean name = this.<Boolean><Boolean>(R.id.user_input_name_view);
+        // Get text from EditText to Html
+        EditText nameField = (EditText) findViewById(R.id.user_input_name_view);
+        String name = nameField.getText().toString();
+        Log.v("MaindActivity","Name: "+ name);
 
 
         int price = calculatePrice();
@@ -96,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
      * @return
      */
 
-    private String createOrderSummary(int price, boolean addWhippedCream, boolean chocolate, boolean name) {
+    private String createOrderSummary(int price, boolean addWhippedCream, boolean chocolate, String name) {
         String priceMessage = "Name: "+ name;
         priceMessage += "\nThank you for ordering " + quantity + " Coffees!";
         priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
