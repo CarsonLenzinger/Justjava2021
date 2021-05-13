@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         // Figure out if user wants chocolate
         CheckBox chocolate = (CheckBox) findViewById(R.id.chocolate);
         boolean hasChocolate = chocolate.isChecked();
+        Log.v("MainActivity","Has chocolate: " + hasChocolate);
 
 
         // Get text from EditText to Html
@@ -93,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Create a summary of our order
-     * @param price
+     * @param name     of the customer
+     * @param price    the total price
      * @param addWhippedCream is whether or not the user wants Whipped Cream Topping
      * @param chocolate
      * @return
