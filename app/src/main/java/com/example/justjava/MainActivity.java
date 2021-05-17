@@ -79,8 +79,6 @@ public class MainActivity extends AppCompatActivity {
         Log.v("MainActivity","Name: "+ name);
 
 
-
-
         int price = calculatePrice(hasWhippedCream,hasChocolate);
         String priceMessage =  createOrderSummary(price, hasWhippedCream, hasChocolate, name);
         displayMessage(priceMessage);
@@ -99,16 +97,17 @@ public class MainActivity extends AppCompatActivity {
     private int calculatePrice(boolean hasWhippedCream, boolean hasChocolate){
         int basePrice = 5;
 
+        //adds 1$ if they want whipped cream
         if (hasWhippedCream) {
             basePrice = basePrice + 1;
         }
-
+        //adds 2$ if they want chocolate
         if (hasChocolate){
             basePrice = basePrice +2;
         } else {
             // do nothing
         }
-
+        //calculate the total order price by multiplying the quantity
         return quantity * basePrice;
     }
 
@@ -133,8 +132,6 @@ public class MainActivity extends AppCompatActivity {
         return priceMessage;
 
     }
-
-
 
 
     /**
