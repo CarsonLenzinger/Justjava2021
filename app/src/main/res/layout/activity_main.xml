@@ -108,6 +108,18 @@
             android:onClick="submitOrder"
             android:text="Order" />
 
+        <TextView
+            android:id="@+id/CoffeeAccessories_Button"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="Coffee Accessories"
+            android:background="@color/purple_500"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+
 
     </LinearLayout>
 
