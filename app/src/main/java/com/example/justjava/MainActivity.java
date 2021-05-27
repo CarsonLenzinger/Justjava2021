@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        
+
         TextView coffeeAccessories = (TextView) findViewById(R.id.CoffeeAccessories_Button);
         // This is to go to another page via a Text View, if i want to make another page I can Copy and paste with updated information
 
@@ -51,12 +53,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
     }
 
+    /**
+     * This method will open the NowHiring page when the button in activitymain.xml is clicked
+     * @param view
+     */
+    public void nowHiring(View view) {
+        Intent i = new Intent(this,NowHiring.class);
+        startActivity(i);
+    }
 
     /**
      * This method is called when the Increment/Plus button is clicked.
